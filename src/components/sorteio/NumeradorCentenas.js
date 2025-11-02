@@ -4,7 +4,7 @@ export default function NumeradorCentenas({ centena, onChange, totalCentenas }) 
   return (
     <div className="p-3 bg-white rounded-xl shadow-sm w-full">
       <h3 className="text-sm font-semibold mb-2">Centenas</h3>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-1">
         {[...Array(totalCentenas)].map((_, i) => (
           <button
             key={i}
