@@ -129,7 +129,7 @@ export default function SorteioPage() {
 
             <div className="flex items-center gap-3">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 min-w-[80px] text-center">
-                <div className="flex items-center justify-center gap-1 mb-0.5">
+                <div className="flex items-center justify-center gap-1 mb-2">
                   <TrendingUp className="w-3 h-3" />
                   <span className="text-[10px] opacity-75">Preço</span>
                 </div>
