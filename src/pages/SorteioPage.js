@@ -109,7 +109,6 @@ export default function SorteioPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Cabeçalho colorido */}
       <div className="bg-gradient-to-r from-purple-600 via-cyan-500 to-emerald-500 text-white">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between gap-6">
@@ -184,12 +183,10 @@ export default function SorteioPage() {
         </div>
       </div>
 
-      {/* Numerador acima da cartela */}
       <div className="flex-1 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 py-4 h-full">
-          <div className="flex flex-col items-center gap-6 h-full">
-            {/* Numerador em cima */}
-            <div className="w-full flex justify-center">
+          <div className="grid grid-cols-[200px,1fr] gap-4 h-full">
+            <div className="flex items-start">
               <NumeradorCentenas
                 centena={centena}
                 onChange={setCentena}
@@ -197,8 +194,7 @@ export default function SorteioPage() {
               />
             </div>
 
-            {/* Cartela abaixo */}
-            <div className="w-full">
+            <div className="flex items-start">
               <CartelaNumeros
                 centena={centena}
                 numerosSelecionados={numerosSelecionados}
@@ -210,7 +206,6 @@ export default function SorteioPage() {
         </div>
       </div>
 
-      {/* Carrinho flutuante */}
       <CarrinhoCompra
         numerosSelecionados={numerosSelecionados}
         precoPorNumero={sorteioAtivo.preco_por_numero || 0}
@@ -219,7 +214,6 @@ export default function SorteioPage() {
         onFinalizar={() => setCheckoutOpen(true)}
       />
 
-      {/* Modal de checkout */}
       <CheckoutModal
         isOpen={checkoutOpen}
         onClose={() => setCheckoutOpen(false)}
@@ -231,12 +225,3 @@ export default function SorteioPage() {
     </div>
   );
 }
-
-  const queryClient = useQueryClient();
-
-  const { data: sorteios = [], isLoading: loadingSorteios } = useQuery({
-    queryKey: ['sorteios'],
-    queryFn: () => base44.entities.Sorteio.filter({ status: 'ativo' }),
-    initialData: [],
-  });
-
