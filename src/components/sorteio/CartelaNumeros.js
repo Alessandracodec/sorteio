@@ -11,7 +11,7 @@ export default function CartelaNumeros({
 
   return (
     <div className="p-4 bg-white rounded-xl shadow-sm w-full overflow-auto">
-      <div className="grid grid-cols-1 gap-2">
+      <div className="grid grid-cols-20 gap-2">
         {numeros.map((n) => {
           const vendido = numerosVendidos.includes(n);
           const selecionado = numerosSelecionados.includes(n);
