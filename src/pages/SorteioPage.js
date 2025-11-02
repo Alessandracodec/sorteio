@@ -184,10 +184,9 @@ export default function SorteioPage() {
         </div>
       </div>
 
-      <div className="flex-1 overflow-auto">
-        <div className="max-w-7xl mx-auto px-6 py-6  flex flex-col gap-6">
+      <div className="flex-1 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 py-4 h-full">
           <div className="grid grid-cols-[200px,1fr] gap-4 h-full">
-            <div className="w-full flex justify-center">
               <NumeradorCentenas
                 centena={centena}
                 onChange={setCentena}
